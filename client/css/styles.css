@@ -51,7 +51,7 @@ body::-webkit-scrollbar {
 
 .loginRelated{
     display: flex;
-    width: 10vw;
+    width: 20vw;
     justify-content: space-evenly;
     align-items: center;
     height: 100%;
@@ -166,7 +166,7 @@ h2{
 }
 
 .loginBtn, .registerBtn{
-    font-size: 1.3rem;
+    font-size: 1.4vw;
 }
 
 .registerBtn{

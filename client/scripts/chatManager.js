@@ -26,6 +26,7 @@ joinChatForm.addEventListener('submit', async (event) => {
 
       if (response.ok) {
         console.log('User added to chat successfully');
+        window.location.reload();
       } else {
         throw new Error('Failed to join chat');
       }

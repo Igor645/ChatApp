@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <title>Register Page</title>
+</head>
+<body>
+  <header>
+    <div class="webTitle">Pychat</div>
+  </header>
+
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registerForm" method="post" action="/register">
+          <div class="username">
+          <div class="inpSection">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="inpSection">
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" required>
+          </div>
+          </div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+    
+          <label for="registerPassword">Password:</label>
+          <input type="password" id="registerPassword" name="registerPassword" required>
+    
+          <button class="submitBtn" type="submit">Register</button>
+        </form>
+      </div>
+      <footer>
+        <div class="creator">Elbish Bhusal</div>
+        <div class="creator">Alek Cvetkovski</div>
+        <div class="creator">Igor Martic</div>
+        <div class="creator">David Tanaskovic</div>
+    </footer>
+
+    <script src="../scripts/register.js"></script>
+</body>
+</html>

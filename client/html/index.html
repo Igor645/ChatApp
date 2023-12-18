@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <title>Chat Application</title>
+
+</head>
+<body>
+    <header>
+        <div class="webTitle">Pychat</div>
+        <div class="loginRelated">
+            <a class="loginBtn" href="login.html">Login</a>
+            <a class="registerBtn" href="register.html">Register</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="chatManager">
+            <div class="codeIndicator">Current Chat's Code:</div>
+            <div class="currentCode">No Chat</div>
+            <form class="joinChat">
+                <input type="text" id="chatCodeInput" placeholder="Enter chat code">
+                <button id="joinChatButton">Join Chat</button>
+            </form>
+            <button class="createChat">Create New</button>
+            <button class="moveManager">⌄</button>
+        </div>
+
+        <div class="chatView">
+            <div class="chatPicker">
+                
+            </div> 
+
+            <div class="chatContainer">
+                <div class="msgContainer">
+                </div>
+                <input type="text" class="chatInput" placeholder="Type a message...">
+            </div>
+        </div>
+    </div>
+
+    
+    <footer>
+        <div class="creator">Elbish Bhusal</div>
+        <div class="creator">Alek Cvetkovski</div>
+        <div class="creator">Igor Martic</div>
+        <div class="creator">David Tanaskovic</div>
+    </footer>
+    
+    <script src="../scripts/chatScroll.js"></script>
+    <script src="../scripts/ChatsLoader.js"></script>
+    <script src="../scripts/chatManager.js"></script>
+    <script src="../scripts/sendMessage.js"></script>
+    <script src="../scripts/checkIfLoggedIn.js"></script>
+</body>
+</html>

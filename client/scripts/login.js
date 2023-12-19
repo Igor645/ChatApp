@@ -1,5 +1,5 @@
 const loginForm = document.getElementById('loginForm');
-const apiUrl = 'http://localhost:3000';
+const apiUrl = 'https://chatapi-uax3.onrender.com';
 
 loginForm.addEventListener('submit', async (event) => {
   event.preventDefault(); 

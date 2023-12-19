@@ -5,10 +5,13 @@ const { ObjectId } = require('mongodb');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
 const WebSocket = require('ws');
+const path = require('path');
+require('dotenv').config();
 
 const app = express();
 
-const uri = 'mongodb+srv://admin:kali@chat-application.1tsxyfg.mongodb.net/';
+const uri = process.env.MONGODB_URI;
+
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const port = 3000;
@@ -16,6 +19,8 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+app.use(express.static(path.join(__dirname, '../client')));
+
 
 const server = app.listen(port, () => console.log(`Server running on port ${port}`));
 
@@ -30,13 +35,29 @@ wss.on('connection', function connection(ws) {
   ws.send(JSON.stringify(newMessage));
 });
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/html/index.html'));
+});
+
+app.get('/index.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/html/index.html'));
+});
+
+app.get('/login.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/html/login.html'));
+});
+
+app.get('/register.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/html/register.html'));
+});
+
 app.get('/api/chats/:objectId', async (req, res) => {
   try {
     await client.connect();
     const collection = client.db('chat-app').collection('Chats');
 
     const objectId = req.params.objectId;
-
+    
     const searchObjectId = new ObjectId(objectId);
 
     const chats = await collection.find({ users: searchObjectId }).toArray();

@@ -1,5 +1,5 @@
 const registerForm = document.getElementById('registerForm');
-const apiUrl = 'http://localhost:3000';
+const apiUrl = 'https://chatapi-uax3.onrender.com';
 
 registerForm.addEventListener('submit', async (event) => {
     event.preventDefault();

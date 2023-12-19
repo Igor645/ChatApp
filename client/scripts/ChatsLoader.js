@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000';
+const apiUrl = 'https://chatapi-uax3.onrender.com';
 const storedUser = sessionStorage.getItem('loggedInUser');
 let loadedMessageIds = new Set();
 
@@ -8,7 +8,7 @@ if (storedUser) {
   const objectId = loggedInUser._id;
   console.log(objectId)
 
-  const socket = new WebSocket('ws://localhost:3000'); 
+  const socket = new WebSocket('wss://chatapi-uax3.onrender.com'); 
 
 socket.onopen = function(event) {
   console.log('WebSocket connection established');
@@ -99,6 +99,15 @@ function renderMessages(chatBoxElement, messages, chat) {
       msgContainer.innerHTML = "";
       const chosenChatId = this.dataset.id;
       sessionStorage.setItem('chosenChat', chosenChatId);
+      
+      const chatTitles = document.querySelectorAll(".chatTitle");
+      
+      chatTitles.forEach(title => {
+        title.classList.remove('selected');
+      });
+
+      this.querySelector('.chatTitle').classList.add('selected');
+
       const currentCode = document.querySelector('.currentCode');
       currentCode.textContent = chat.uniqPas;
 
@@ -107,6 +116,7 @@ function renderMessages(chatBoxElement, messages, chat) {
     })
   });
 }
+
 
 function fetchNewMessagesAndUpdateUI() {
   const serializedSet = JSON.stringify(Array.from(loadedMessageIds));

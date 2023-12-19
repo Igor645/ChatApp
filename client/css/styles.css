@@ -32,7 +32,7 @@ footer{
 
 .creator{
     margin-left: 1%;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
 }
 
 body{
@@ -135,6 +135,7 @@ h2{
 
 .usernameDisplay{
     width: 50%;
+    font-size: 1vw;
     text-align: center;
 }
 
@@ -162,7 +163,7 @@ h2{
 /*=========================Homepage=========================*/
 
 .webTitle{
-    font-size: 3rem;
+    font-size: 2.5vw;
 }
 
 .loginBtn, .registerBtn{
@@ -250,7 +251,7 @@ h2{
     overflow: hidden;
   }
   
-
+/* ==========================================Chat-Manager================================*/
 .chatManager {
     position: absolute;
     right: 0;
@@ -281,14 +282,14 @@ h2{
 }
 
 .currentCode{
-    font-size: 5vh;
+    font-size: 3vw;
     text-align: center;
     width: 100%;
     border-bottom: royalblue solid 0.2rem;
 }
 
 #chatCodeInput{
-    height: 20%;
+    height: 30%;
     width: 45%;
     border: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
@@ -306,7 +307,7 @@ h2{
 }
 
 #joinChatButton{
-    height: 20%;
+    height: 30%;
     background-color: royalblue;
     border: none;
     width: 30%;

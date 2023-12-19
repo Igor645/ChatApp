@@ -5,10 +5,10 @@ let loadedMessageIds = new Set();
 if (storedUser) {
   const loggedInUser = JSON.parse(storedUser);
 
-  const objectId = loggedInUser._id; // Assuming '_id' holds the ObjectId
+  const objectId = loggedInUser._id;
   console.log(objectId)
 
-  const socket = new WebSocket('ws://localhost:3000'); // Replace with your WebSocket server URL
+  const socket = new WebSocket('ws://localhost:3000'); 
 
 socket.onopen = function(event) {
   console.log('WebSocket connection established');
@@ -63,7 +63,7 @@ fetch(`${apiUrl}/api/chats/${objectId}`)
           chatPreview.classList.add('chatPreview');
           if (data.messages.length > 0) {
             const lastMessage = data.messages[data.messages.length - 1];
-            chatPreview.textContent = lastMessage.Nachricht; // Assuming the field is named 'Nachricht'
+            chatPreview.textContent = lastMessage.Nachricht;
           } else {
             chatPreview.textContent = 'No messages yet';
           }
@@ -97,7 +97,7 @@ function renderMessages(chatBoxElement, messages, chat) {
       loadedMessageIds = new Set();
       const msgContainer = document.querySelector(".msgContainer");
       msgContainer.innerHTML = "";
-      const chosenChatId = this.dataset.id; // Retrieve the chat ID from data-id attribute
+      const chosenChatId = this.dataset.id;
       sessionStorage.setItem('chosenChat', chosenChatId);
       const currentCode = document.querySelector('.currentCode');
       currentCode.textContent = chat.uniqPas;
@@ -120,7 +120,7 @@ function fetchNewMessagesAndUpdateUI() {
     .then(data => {    
       const loggedInUserString = sessionStorage.getItem('loggedInUser');
       const loggedInUser = JSON.parse(loggedInUserString);
-      const loggedInUserId = loggedInUser._id; // Assuming the user ID is stored in sessionStorage
+      const loggedInUserId = loggedInUser._id;
       const msgContainer = document.querySelector(".msgContainer");
 
       data.messages.forEach(message => {

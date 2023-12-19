@@ -32,10 +32,9 @@ chatInput.addEventListener('keydown', async (event) => {
                 
       } catch (error) {
         console.error('Error adding message:', error);
-        // Handle error cases if needed
       }
 
-      chatInput.value = ''; // Clear the input after sending the message
+      chatInput.value = '';
     }
   }
 });

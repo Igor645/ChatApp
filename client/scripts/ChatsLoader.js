@@ -1,6 +1,10 @@
 const apiUrl = 'https://chatapi-uax3.onrender.com';
 const storedUser = sessionStorage.getItem('loggedInUser');
 let loadedMessageIds = new Set();
+window.onload = function() {
+  sessionStorage.setItem('chosenChat', '');
+};
+
 
 if (storedUser) {
   const loggedInUser = JSON.parse(storedUser);

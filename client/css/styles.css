@@ -22,12 +22,14 @@ header {
 footer{
     background-color: white;
     display: flex;
-    width: 100vw;
+    width: 100%;
     flex-direction: column;
     height: 5.5vh;
     justify-content: space-between;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 2vh;
+    padding-right: 0;
+    padding-left: 0;
 }
 
 .creator{
